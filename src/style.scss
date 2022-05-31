@@ -3,6 +3,7 @@
 @import "scss/variable";
 
 .header {
+  background-color: $lightPurple;
   &__informatives-top {
     background-color: $darkPurple;
     color: $white;
@@ -12,6 +13,7 @@
       @include flex(center, flex-end);
       font-size: calculator-rem(12);
       font-weight: 300;
+      margin-right: 5px;
       &::after {
         content: "";
         width: 1px;
@@ -31,11 +33,67 @@
     &--text-strong{
       font-weight: 700;
       margin: 0 5px;
+      @include flex(center, flex-end);
+      font-size: calculator-rem(12);
+    }
+
+    &--text-margin{
+      font-weight: 300;
+      margin-left: 5px;
     }
   }
   
   &__informatives-wrapper {
     max-width: 593px;
     @include flex(space-between);
+  }
+
+  &__container {
+    @include container-center();
+    @include flex();
+  }
+
+  &__logo {
+    max-width: 238px;
+    width: 100%;
+    margin-right: 31px;
+    &--text {
+      font-size: calculator-rem(48);
+      font-family: "ovo", sans-serif;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $white;
+
+    }
+  }
+
+  &__menu {
+    @include flex();
+    flex: 1;
+    margin: 0 31px;
+
+  }
+
+
+  &__wrapper-icons{
+    @include flex();
+    max-width: 135px;
+    width: 100%;
+  }
+
+  &__icons{
+    
+    &--image{
+      max-width: 25px;
+      max-height: 25px;
+      margin-right: 31px;
+    }
+
+    &:last-child{
+      .header__icons--image{
+        // margin-right: 0;
+        
+      }
+    }
   }
 }

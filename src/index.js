@@ -2,9 +2,9 @@ function constructInformativesTop(json){
     const $wrapper = document.querySelector('.header__informatives-wrapper')
     for (completeText of json){
         $wrapper.innerHTML += `
-        <span class="header__informatives-top--text">
+        <span class="header__informatives-top--text${completeText.firstBold ? "-strong" : ""}">
           ${completeText.text}
-          <strong class="header__informatives-top--text-strong">
+          <strong class="header__informatives-top--text${completeText.firstBold == false ? "-strong" : "-margin"}">
             ${completeText.bold}
           </strong>
         </span>`
