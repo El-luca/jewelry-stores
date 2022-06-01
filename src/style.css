@@ -81,7 +81,7 @@ table {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  font-size: 0.75 "rem";
+  font-size: 0.75rem;
   font-weight: 300;
   margin-right: 5px;
 }
@@ -111,7 +111,7 @@ table {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  font-size: 0.75 "rem";
+  font-size: 0.75rem;
 }
 
 .header__informatives-top--text-margin {
@@ -159,20 +159,22 @@ table {
 }
 
 .header__logo--text {
-  font-size: 3 "rem";
+  font-size: 3rem;
   font-family: "ovo", sans-serif;
   text-transform: uppercase;
   text-decoration: none;
   color: #FFFFFF;
+  width: 238px;
+  height: 36px;
 }
 
 .header__menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -180,6 +182,14 @@ table {
       -ms-flex: 1;
           flex: 1;
   margin: 0 31px;
+}
+
+.header__menu-department {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.875rem;
 }
 
 .header__wrapper-icons {
@@ -200,5 +210,9 @@ table {
   max-width: 25px;
   max-height: 25px;
   margin-right: 31px;
+}
+
+.header__icons:last-child .header__icons--image {
+  margin-right: 0;
 }
 /*# sourceMappingURL=style.css.map */

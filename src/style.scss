@@ -63,17 +63,26 @@
       text-transform: uppercase;
       text-decoration: none;
       color: $white;
-
+      width: 238px;
+      height: 36px;
+      // font-size: 48px;
     }
   }
 
   &__menu {
-    @include flex();
+    @include flex(space-between);
     flex: 1;
     margin: 0 31px;
 
   }
 
+  &__menu-department{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $white;
+    font-weight: 700;
+    font-size: calculator-rem(14)
+  }
 
   &__wrapper-icons{
     @include flex();
@@ -91,9 +100,10 @@
 
     &:last-child{
       .header__icons--image{
-        // margin-right: 0;
+        margin-right: 0;
         
       }
     }
   }
 }
+ 

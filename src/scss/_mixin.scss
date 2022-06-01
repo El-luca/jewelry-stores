@@ -1,5 +1,5 @@
 @function calculator-rem($font-size){
-    @return $font-size / 16 "rem";
+    @return $font-size / 16 + rem;
 }
 
 @mixin flex($justify: center, $align: center){

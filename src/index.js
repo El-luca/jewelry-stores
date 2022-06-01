@@ -19,4 +19,8 @@ function informativesTop(){
     })
 }
 
+// function requestMenuDesktop(){
+//     fetch("../mocks/MENU.json").then(fun)
+// }
+
 informativesTop()
