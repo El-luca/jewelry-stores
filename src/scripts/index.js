@@ -12,15 +12,22 @@ function constructInformativesTop(json){
     }
 }
 function informativesTop(){
-    fetch("./mocks/INFORMATIVES_TOP.json").then(function (response){
+    fetch("").then(function (response){
         return response.json()
     }).then(function(json){
         constructInformativesTop(json)
     })
 }
 
-// function requestMenuDesktop(){
-//     fetch("../mocks/MENU.json").then(fun)
-// }
+function constructMenuDesktop(json)
+
+function requestMenuDesktop(){
+    fetch("../../src/mocks/MENU.json").then(function (response){
+        return response.json();
+    }).then(function (json){
+        constructMenuDesktop(json)
+    })
+}
 
 informativesTop()
+requestMenuDesktop()
