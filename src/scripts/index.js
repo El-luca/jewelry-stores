@@ -12,22 +12,33 @@ function constructInformativesTop(json){
     }
 }
 function informativesTop(){
-    fetch("").then(function (response){
+    fetch("../src/mocks/INFORMATIVES__TOP.json").then(function (response){
         return response.json()
     }).then(function(json){
         constructInformativesTop(json)
     })
 }
 
-function constructMenuDesktop(json)
+
 
 function requestMenuDesktop(){
     fetch("../../src/mocks/MENU.json").then(function (response){
         return response.json();
     }).then(function (json){
-        constructMenuDesktop(json)
+        constructMenuDesktop(json.menu)
     })
 }
 
-informativesTop()
-requestMenuDesktop()
+function constructMenuDesktop(json){
+    let structureMenu = "";
+
+    const $containerMenu =  document.querySelector('.header__menu')
+    for (const menu of json){
+        structureMenu += `<div class="header__menu-wrapper">
+        <a href="${menu.url}" class="header__menu-department">${menu.name}</a>
+        </div>`
+    }
+    $containerMenu.innerHTML = structureMenu;
+}
+// informativesTop()
+// requestMenuDesktop()
