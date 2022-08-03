@@ -92,6 +92,7 @@
 
   &__menu-items{
     position: absolute;
+    left: 0;
     background-color: $white;
     color: $black;
     margin:0 12px 0 26px;
@@ -100,6 +101,9 @@
     max-width: 194px;
     width: 100%;
     font-weight: 400;
+    margin: 12px auto 12px 26px;
+    // box-sizing: border-box;
+
 
     :hover{
       background-color: $backgroundGrey;
@@ -114,6 +118,8 @@
     font-size: calculator-rem(13);
     @include flex();
     height: 40px;
+
+    // padding: 12px 26px;
   }
 
   &__wrapper-icons{
@@ -131,9 +137,8 @@
     }
 
     &:last-child{
-      .header__icons--image{
-        margin-right: 0;
-        
+      &-image{
+        margin-right: 0;        
       }
     }
   }

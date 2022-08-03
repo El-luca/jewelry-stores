@@ -8,9 +8,9 @@ function constructInformativesTop(json){
             ${completeText.bold}
           </strong>
         </span>`
-
     }
 }
+
 function informativesTop(){
     fetch("../src/mocks/INFORMATIVES__TOP.json").then(function (response){
         return response.json()
@@ -19,8 +19,6 @@ function informativesTop(){
     })
 }
 
-
-
 function requestMenuDesktop(){
     fetch("../../src/mocks/MENU.json").then(function (response){
         return response.json();
@@ -28,10 +26,9 @@ function requestMenuDesktop(){
         constructMenuDesktop(json.menu)
     })
 }
-
+ 
 function constructMenuDesktop(json){
     let structureMenu = "";
-
     const $containerMenu =  document.querySelector('.header__menu')
     for (const menu of json){
         structureMenu += `<div class="header__menu-wrapper">
@@ -40,5 +37,6 @@ function constructMenuDesktop(json){
     }
     $containerMenu.innerHTML = structureMenu;
 }
-// informativesTop()
+
+informativesTop()
 // requestMenuDesktop()
