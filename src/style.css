@@ -142,11 +142,12 @@ table {
   color: #FFFFFF;
   font-weight: 700;
   font-size: 0.875rem;
+  width: 146px;
+  height: 101px;
 }
 .header__menu-items {
   position: absolute;
   left: 0;
-  background-color: #FFFFFF;
   color: #302E2B;
   margin: 0 12px 0 26px;
   top: 100%;
@@ -154,14 +155,14 @@ table {
   max-width: 194px;
   width: 100%;
   font-weight: 400;
-  margin: 12px auto 12px 26px;
+  box-sizing: border-box;
 }
 .header__menu-items :hover {
   background-color: #F1F1F1;
 }
 .header__menu-category {
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: capitalize;
   color: #302E2B;
   font-weight: 400;
   font-size: 0.8125rem;
@@ -169,6 +170,8 @@ table {
   justify-content: center;
   align-items: center;
   height: 40px;
+  width: 194px;
+  background-color: #FFFFFF;
 }
 .header__wrapper-icons {
   display: flex;
@@ -181,6 +184,7 @@ table {
   max-width: 25px;
   max-height: 25px;
   margin-right: 31px;
+  cursor: pointer;
 }
 .header__icons:last-child-image {
   margin-right: 0;
