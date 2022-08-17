@@ -38,5 +38,14 @@ function constructMenuDesktop(json){
     $containerMenu.innerHTML = structureMenu;
 }
 
-informativesTop()
+// informativesTop()
 // requestMenuDesktop()
+
+function handleOpenMenuMobile(){
+    const $menuMobile = document.querySelector('.header__menu-mobile')
+    $menuMobile.addEventListener("click", function(){
+        $menuMobile.classList.toggle("active")
+    })
+}
+
+handleOpenMenuMobile()

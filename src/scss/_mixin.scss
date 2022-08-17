@@ -12,7 +12,13 @@
 max-width: $max-width;
 margin: 0 auto;
 
-@media (max-width: 1024px) {
-    margin: 0 5px;
+    @media (max-width: 1024px) {
+        margin: 0 5px;
+    }
 }
+
+@mixin media-mob(){
+    @media (max-width: 1024px){
+        @content
+    }
 }
