@@ -44,7 +44,7 @@ function constructMenuDesktop(json){
 function handleOpenMenuMobile(){
     const $menuMobile = document.querySelector('.header__menu-mobile')
     $menuMobile.addEventListener("click", function(){
-        $menuMobile.classList.toggle("active")
+        $menuMobile.classList.add("active")
     })
 }
 
