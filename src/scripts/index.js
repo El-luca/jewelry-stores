@@ -41,11 +41,23 @@ function constructMenuDesktop(json){
 // informativesTop()
 // requestMenuDesktop()
 
-function handleOpenMenuMobile(){
-    const $menuMobile = document.querySelector('.header__menu-mobile')
+function handleToggleMenuMobile(){
+    const $menuMobile = document.querySelector('.header__menu-hamburguer')
+    const $esctrutureMenuMobile = document.querySelector('.header__menu-mobile')
+    const $closeMenuImgX = document.querySelector('.close-menu')
+    const $shadowCloseMenuMobile = document.querySelector('.header__menu-mobile-shadow')
+
     $menuMobile.addEventListener("click", function(){
-        $menuMobile.classList.add("active")
+        $esctrutureMenuMobile.classList.add("active")
+    })
+    $closeMenuImgX.addEventListener("click", function(){
+        $esctrutureMenuMobile.classList.remove("active")
+    })
+    $shadowCloseMenuMobile.addEventListener("click", function(){
+        $esctrutureMenuMobile.classList.remove('active')
     })
 }
 
-handleOpenMenuMobile()
+handleToggleMenuMobile()
+
+console.log('tá fununçando')

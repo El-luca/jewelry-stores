@@ -217,13 +217,51 @@ table {
   margin-right: 0;
 }
 .header__menu-mobile {
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: -100%;
+  left: -200%;
   height: 100vh;
-  width: 80%;
+  width: 100%;
   background-color: blue;
+  transition: all 0.9s;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row-reverse;
 }
 .header__menu-mobile.active {
   left: 0;
+}
+.header__menu-mobile-shadow {
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 20vw;
+  background-color: #302E2B;
+  opacity: 0.5;
+  width: 20%;
+}
+.header__menu-mobile-close {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 0;
+}
+.header__menu-mobile-structure {
+  width: 100%;
+}
+.header__menu-mobile-category {
+  background-color: #614B65;
+  color: #FFFFFF;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__menu-mobile-img-arrow {
+  width: 20%;
+  height: 50px;
+  background-color: #614B65;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
