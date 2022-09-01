@@ -124,7 +124,7 @@
   &__menu-category {
     text-decoration: none;
     text-transform: capitalize;
-    color: $black;
+    color: $darkPurple;
     font-weight: 400;
     font-size: calculator-rem(13);
     @include flex();
@@ -200,10 +200,8 @@
   }
 
   &__menu-mobile-wrapper {
-    @include flex();
-
-    flex-direction: column;
-    // justify-content: space-around;
+    @include flex(space-between);
+    width: 100%;
     background-color: $lightPurple;
   }
 
@@ -213,11 +211,17 @@
     background-color: $darkPurple;
   }
 
-  &__menu-mobile-departament{
+  &__menu-mobile-category{
     @include flex();
     flex-direction: column;
+  }
+
+  &__menu-mobile-departament{
+    @include flex(flex-start);
+    margin-left: 12%;
+    flex-direction: column;
     color: $black;
-    background-color: $white;
+    background-color: $lightPurple;
     text-decoration: none;
     text-transform: uppercase;
   }
@@ -271,15 +275,25 @@
   }
 
   &__menu-mobile-img-arrow {
-    @include flex();
-    width: 18px;
+    @include flex(flex-end);
+    width: 20%;
     height: 32px;
     background-color: transparent;
     cursor: pointer;
+
+    &.active{
+      transform: rotate(0.5turn);      
+    }
   }
 
   &__menu-mobile-itens{
     display: none;
+
+    &.active{
+      display: block;
+      
+    }
+    background-color: $white;
   }
 
 }

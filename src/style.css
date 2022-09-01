@@ -182,7 +182,7 @@ table {
 .header__menu-category {
   text-decoration: none;
   text-transform: capitalize;
-  color: #302E2B;
+  color: #614B65;
   font-weight: 400;
   font-size: 0.8125rem;
   display: flex;
@@ -252,9 +252,9 @@ table {
 }
 .header__menu-mobile-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  flex-direction: column;
+  width: 100%;
   background-color: #9A7AA0;
 }
 .header__menu-mobile-wrapper-personnel {
@@ -264,13 +264,20 @@ table {
   justify-content: space-around;
   background-color: #614B65;
 }
-.header__menu-mobile-departament {
+.header__menu-mobile-category {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.header__menu-mobile-departament {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 12%;
+  flex-direction: column;
   color: #302E2B;
-  background-color: #FFFFFF;
+  background-color: #9A7AA0;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -329,13 +336,20 @@ table {
 }
 .header__menu-mobile-img-arrow {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  width: 18px;
+  width: 20%;
   height: 32px;
   background-color: transparent;
   cursor: pointer;
 }
+.header__menu-mobile-img-arrow.active {
+  transform: rotate(0.5turn);
+}
 .header__menu-mobile-itens {
   display: none;
+  background-color: #FFFFFF;
+}
+.header__menu-mobile-itens.active {
+  display: block;
 }/*# sourceMappingURL=style.css.map */

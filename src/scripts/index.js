@@ -58,12 +58,25 @@ function handleToggleMenuMobile(){
     })
 }
 
-handleToggleMenuMobile()
+// handleToggleMenuMobile()
 
 function handleMenuMobileCategory(){
-    const $iconShowDepartament = document.querySelectorAll(".icon-menu-mobile-arrow")
-    const $menuCategory = document.querySelectorAll('.__menu-mobile-itens')
+    const $iconShowDepartament = document.querySelector(".icon-menu-mobile-arrow")
+    const $menuCategory = document.querySelector('.header__menu-mobile-itens')
     $iconShowDepartament.addEventListener('click', function (){
-
+        $menuCategory.classList.toggle('active')
+        // alert('ta funfando')
     })
 }
+
+handleMenuMobileCategory()
+
+function rotateArrow(){
+    const $iconShowDepartament = document.querySelector(".icon-menu-mobile-arrow")
+    $iconShowDepartament.addEventListener('click', function(){
+        $iconShowDepartament.classList.toggle('active')
+    })
+}
+
+rotateArrow()
+console.log(rotateArrow)
