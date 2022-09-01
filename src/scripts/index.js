@@ -60,4 +60,10 @@ function handleToggleMenuMobile(){
 
 handleToggleMenuMobile()
 
-console.log('tá fununçando')
+function handleMenuMobileCategory(){
+    const $iconShowDepartament = document.querySelectorAll(".icon-menu-mobile-arrow")
+    const $menuCategory = document.querySelectorAll('.__menu-mobile-itens')
+    $iconShowDepartament.addEventListener('click', function (){
+
+    })
+}
