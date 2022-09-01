@@ -58,7 +58,7 @@ function handleToggleMenuMobile(){
     })
 }
 
-// handleToggleMenuMobile()
+handleToggleMenuMobile()
 
 function handleMenuMobileCategory(){
     const $iconShowDepartament = document.querySelector(".icon-menu-mobile-arrow")
