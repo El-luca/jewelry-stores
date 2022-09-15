@@ -31,36 +31,33 @@ function constructMenuDesktop(json){
     let structureMenu = "";
     const $containerMenu =  document.querySelector('.header__menu')
     for (const menu of json){
-        structureMenu += `<div class="header__menu-wrapper">
+        structureMenu += `<div class="header__menu-wrapper-category">
         <a href="${menu.url}" class="header__menu-department">${menu.name}</a>
         ${menu.children ? `      <div class="header__menu-items">
         ${menu.children.map(function (child){
-            `
+            return`
             <div class="header__menu-wrapper-category">
-                <a href="" class="header__menu-category-departament">água marinha - incolor</a>
+                <a href=${child.url} class="header__menu-category">
+                    ${child.name}
+                </a>
+                
+                ${child.children ? `
+                <div class="header__menu-sub-category">
+                ${child.children.map(function(subchild){
+                    return`
+                        <a href=${subchild.url} class="header__menu-category">
+                            ${subchild.name}
+                        </a>
+                    `
+                })}                    
+                </div>
+                ` : ``}
             </div>
             `
         })}
         </div>` : ""}
         </div>`
     }
-    `
-        <div class="header__menu-wrapper">
-        <a href="" class="header__menu-department">
-        Água Marinha
-        </a>
-        <div class="header__menu-items">
-        <div class="header__menu-wrapper">
-            <a href="" class="header__menu-category-departament">água marinha - incolor</a>
-        </div>
-        <div class="header__menu-wrapper">
-            <a href="" class="header__menu-category-departament">água marinha - azul</a>
-        </div>
-        <div class="header__menu-wrapper">
-            <a href="" class="header__menu-category-departament">água marinha - verde</a>
-        </div>
-        </div>
-    `
 
     $containerMenu.innerHTML = structureMenu;
 }
@@ -84,7 +81,6 @@ function handleToggleMenuMobile(){
     $shadowCloseMenuMobile.addEventListener("click", function(){
         $esctrutureMenuMobile.classList.remove('active')
     })
-    console.log($menuMobile)
 }
 
 handleToggleMenuMobile()
