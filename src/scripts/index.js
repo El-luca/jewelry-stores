@@ -33,13 +33,40 @@ function constructMenuDesktop(json){
     for (const menu of json){
         structureMenu += `<div class="header__menu-wrapper">
         <a href="${menu.url}" class="header__menu-department">${menu.name}</a>
+        ${menu.children ? `      <div class="header__menu-items">
+        ${menu.children.map(function (child){
+            `
+            <div class="header__menu-wrapper-category">
+                <a href="" class="header__menu-category-departament">água marinha - incolor</a>
+            </div>
+            `
+        })}
+        </div>` : ""}
         </div>`
     }
+    `
+        <div class="header__menu-wrapper">
+        <a href="" class="header__menu-department">
+        Água Marinha
+        </a>
+        <div class="header__menu-items">
+        <div class="header__menu-wrapper">
+            <a href="" class="header__menu-category-departament">água marinha - incolor</a>
+        </div>
+        <div class="header__menu-wrapper">
+            <a href="" class="header__menu-category-departament">água marinha - azul</a>
+        </div>
+        <div class="header__menu-wrapper">
+            <a href="" class="header__menu-category-departament">água marinha - verde</a>
+        </div>
+        </div>
+    `
+
     $containerMenu.innerHTML = structureMenu;
 }
 
 // informativesTop()
-// requestMenuDesktop()
+requestMenuDesktop()
 
 function handleToggleMenuMobile(){
     const $menuMobile = document.querySelector('.header__menu-hamburguer')
@@ -49,6 +76,7 @@ function handleToggleMenuMobile(){
 
     $menuMobile.addEventListener("click", function(){
         $esctrutureMenuMobile.classList.add("active")
+  
     })
     $closeMenuImgX.addEventListener("click", function(){
         $esctrutureMenuMobile.classList.remove("active")
@@ -56,6 +84,7 @@ function handleToggleMenuMobile(){
     $shadowCloseMenuMobile.addEventListener("click", function(){
         $esctrutureMenuMobile.classList.remove('active')
     })
+    console.log($menuMobile)
 }
 
 handleToggleMenuMobile()
@@ -65,7 +94,6 @@ function handleMenuMobileCategory(){
     const $menuCategory = document.querySelector('.header__menu-mobile-itens')
     $iconShowDepartament.addEventListener('click', function (){
         $menuCategory.classList.toggle('active')
-        // alert('ta funfando')
     })
 }
 
@@ -79,4 +107,3 @@ function rotateArrow(){
 }
 
 rotateArrow()
-console.log(rotateArrow)

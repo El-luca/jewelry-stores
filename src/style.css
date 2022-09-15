@@ -146,14 +146,22 @@ table {
   align-items: center;
   flex: 1;
   margin: 0 31px;
+  height: 80px;
 }
 @media (max-width: 1024px) {
   .header__menu {
     display: none;
   }
 }
-.header__menu-wrapper {
+.header__menu-wrapper-category {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.header__menu-wrapper-category:hover .header__menu-items {
+  display: flex;
 }
 .header__menu-department {
   text-decoration: none;
@@ -161,20 +169,24 @@ table {
   color: #FFFFFF;
   font-weight: 700;
   font-size: 0.875rem;
-  width: 146px;
-  height: 101px;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 .header__menu-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   position: absolute;
+  top: 90%;
   left: 0;
   color: #302E2B;
-  margin: 0 12px 0 26px;
-  top: 100%;
-  left: 0;
   max-width: 194px;
-  width: 100%;
   font-weight: 400;
   box-sizing: border-box;
+  border-top: 8px solid #614B65;
+  display: none;
 }
 .header__menu-items :hover {
   background-color: #F1F1F1;
@@ -192,12 +204,16 @@ table {
   width: 194px;
   background-color: #FFFFFF;
 }
-.header__wrapper-icons {
+.header__menu-category:hover .header__menu-items {
+  display: flex;
+}
+.header__menu-category__wrapper-icons {
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: 135px;
   width: 100%;
+  display: flex;
 }
 .header__icons {
   order: 3;
