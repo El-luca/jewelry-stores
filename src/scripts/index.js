@@ -59,7 +59,7 @@ function constructMenuDesktop(json) {
                   child.children
                     ? `
                   <div class="header__menu-sub-category">
-                    ${child.children.join(function (subchild) {
+                    ${child.children.map.join(``)(function (subchild) {
                       return `
                         <a href=${subchild.url} class="header__menu-category">
                             ${subchild.name}
