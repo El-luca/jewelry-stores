@@ -48,7 +48,7 @@ function constructMenuDesktop(json) {
             ? `<div class="header__menu-items ${
               menu.name === "Turmalina" ? "turmalina" : ""
             }">
-        ${menu.children.join(function (child) {
+        ${menu.children.map(function (child) {
           return `
             <div class="header__menu-wrapper-category">
                 <a href=${child.url} class="header__menu-category">
@@ -59,20 +59,20 @@ function constructMenuDesktop(json) {
                   child.children
                     ? `
                   <div class="header__menu-sub-category">
-                    ${child.children.map.join(``)(function (subchild) {
+                    ${child.children.map(function (subchild) {
                       return `
                         <a href=${subchild.url} class="header__menu-category">
                             ${subchild.name}
                         </a>
                       `;
-                    })}                    
+                    }).join("")}                    
                   </div>
                 `
                     : ``
                 }
             </div>
             `;
-        })}
+        }).join("")}
         </div>`
             : ""
         }

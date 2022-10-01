@@ -201,13 +201,13 @@ table {
   background-color: #FFFFFF;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   display: none;
-  font-size: 0;
 }
 .header__menu-items.turmalina {
   background-color: #9A7AA0;
+  color: #FFFFFF;
 }
 .header__menu-items :hover {
-  background-color: #F1F1F1;
+  background-color: #614B65;
 }
 .header__menu-category {
   text-decoration: none;
@@ -220,7 +220,6 @@ table {
   align-items: center;
   height: 40px;
   width: 194px;
-  background-color: #FFFFFF;
 }
 .header__menu-category:hover .header__menu-items {
   display: flex;
