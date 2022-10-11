@@ -154,7 +154,9 @@
     }
 
     :hover {
-      background-color: $darkPurple
+      background-color: $darkPurple;
+      color: $white;
+      
     }
   }
 
@@ -172,6 +174,8 @@
     &:hover {
       .header__menu-items {
         display: flex;
+        color: $white;
+        background-color: $white;
       }
     }
   }
@@ -191,6 +195,8 @@
     &:hover {
       .header__menu-category {
         display: flex;
+        background-color: $black;
+        background-color: $grey;
       }
     }
   }
@@ -279,7 +285,7 @@
     flex-direction: column;
   }
 
-  &__menu-mobile-departament {
+  &__menu-mobile-department {
     @include flex(flex-start);
     margin-left: 12%;
     flex-direction: column;

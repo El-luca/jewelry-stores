@@ -208,6 +208,7 @@ table {
 }
 .header__menu-items :hover {
   background-color: #614B65;
+  color: #FFFFFF;
 }
 .header__menu-category {
   text-decoration: none;
@@ -223,6 +224,8 @@ table {
 }
 .header__menu-category:hover .header__menu-items {
   display: flex;
+  color: #FFFFFF;
+  background-color: #FFFFFF;
 }
 .header__menu-sub-category {
   position: absolute;
@@ -238,6 +241,8 @@ table {
 }
 .header__menu-sub-category:hover .header__menu-category {
   display: flex;
+  background-color: #302E2B;
+  background-color: #C4C4C4;
 }
 .header__wrapper-icons {
   display: flex;
@@ -318,7 +323,7 @@ table {
   align-items: center;
   flex-direction: column;
 }
-.header__menu-mobile-departament {
+.header__menu-mobile-department {
   display: flex;
   justify-content: flex-start;
   align-items: center;

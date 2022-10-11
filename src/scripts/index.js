@@ -15,6 +15,8 @@ function constructInformativesTop(json) {
   }
 }
 
+
+
 function informativesTop() {
   fetch("../src/mocks/INFORMATIVES__TOP.json")
     .then(function (response) {
@@ -25,13 +27,18 @@ function informativesTop() {
     });
 }
 
-function requestMenuDesktop() {
+function requestMenu() {
   fetch("../../src/mocks/MENU.json")
     .then(function (response) {
       return response.json();
     })
     .then(function (json) {
-      constructMenuDesktop(json.menu);
+      const sizeWindow = window.innerWidth
+      if(sizeWindow > 1024){
+        constructMenuDesktop(json.menu);
+      } else {
+        constructMenuMobile(json.menu);
+      }
     });
 }
 
@@ -82,8 +89,34 @@ function constructMenuDesktop(json) {
   $containerMenu.innerHTML = structureMenu;
 }
 
+function constructMenuMobile(json) {
+  let structureMenu = ""
+  const $containerMenu = document.querySelector(
+    ".header__menu-mobile-structure"
+    )
+
+  json.map(function(menu){
+    structureMenu += `
+    <div class="header__menu-mobile-wrapper">
+      <div class="header__menu-mobile-wrapper-department">
+        <a 
+          href=${menu.url}
+          class="header__menu-mobile-departament header__menu-mobile-department"
+        >
+         ${menu.name}
+       </a>
+        <span class="header__menu-mobile-icon-arrow icon-menu-mobile-arrow">
+          <img src="assets/arrow down white.png" class="header__menu-mobile-img-arrow" alt="imagem de uma seta para baixo" title="duas barras verticais, nas extremidades superiores estão afastadas e nas inferiores juntas, aassim formando um simbolo de 'v' na cor branca">                    
+        </span>
+      </div>
+     </div>
+    `
+  })
+  $containerMenu.innerHTML = structureMenu
+}
+
 informativesTop();
-requestMenuDesktop();
+requestMenu();
 
 function handleToggleMenuMobile() {
   const $menuMobile = document.querySelector(".header__menu-hamburguer");
