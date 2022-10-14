@@ -143,6 +143,8 @@ function handleMenuMobileCategory() {
   const $iconShowDepartament = document.querySelector(
     ".icon-menu-mobile-arrow"
   );
+
+  console.log($iconShowDepartament)
   const $menuCategory = document.querySelector(".header__menu-mobile-itens");
   $iconShowDepartament.addEventListener("click", function () {
     $menuCategory.classList.toggle("active");
