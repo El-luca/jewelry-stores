@@ -15,8 +15,6 @@ function constructInformativesTop(json) {
   }
 }
 
-
-
 function informativesTop() {
   fetch("../src/mocks/INFORMATIVES__TOP.json")
     .then(function (response) {
@@ -33,8 +31,8 @@ function requestMenu() {
       return response.json();
     })
     .then(function (json) {
-      const sizeWindow = window.innerWidth
-      if(sizeWindow > 1024){
+      const sizeWindow = window.innerWidth;
+      if (sizeWindow > 1024) {
         constructMenuDesktop(json.menu);
       } else {
         constructMenuMobile(json.menu);
@@ -53,10 +51,11 @@ function constructMenuDesktop(json) {
         ${
           menu.children
             ? `<div class="header__menu-items ${
-              menu.name === "Turmalina" ? "turmalina" : ""
-            }">
-        ${menu.children.map(function (child) {
-          return `
+                menu.name === "Turmalina" ? "turmalina" : ""
+              }">
+        ${menu.children
+          .map(function (child) {
+            return `
             <div class="header__menu-wrapper-category">
                 <a href=${child.url} class="header__menu-category">
                     ${child.name}
@@ -66,20 +65,23 @@ function constructMenuDesktop(json) {
                   child.children
                     ? `
                   <div class="header__menu-sub-category">
-                    ${child.children.map(function (subchild) {
-                      return `
+                    ${child.children
+                      .map(function (subchild) {
+                        return `
                         <a href=${subchild.url} class="header__menu-category">
                             ${subchild.name}
                         </a>
                       `;
-                    }).join("")}                    
+                      })
+                      .join("")}                    
                   </div>
                 `
                     : ``
                 }
             </div>
             `;
-        }).join("")}
+          })
+          .join("")}
         </div>`
             : ""
         }
@@ -89,34 +91,66 @@ function constructMenuDesktop(json) {
   $containerMenu.innerHTML = structureMenu;
 }
 
-function constructMenuMobile(json) {
-  let structureMenu = ""
-  const $containerMenu = document.querySelector(
-    ".header__menu-mobile-structure"
-    )
+function handleMenuMobileCategory() {
+  const $departments = document.querySelectorAll(
+    ".header__menu-mobile-with-child"
+  );
+  $departments.forEach( function($departments){
+    const $iconShowDepartament = document.querySelectorAll(".header__menu-mobile-itens ")
+    const $iconClick = document.querySelectorAll(".header__menu-mobile-img-arrow")
+    const $categorys = document.querySelectorAll(".header__menu-mobile-itens");
+    $iconClick.addEventListener("click", function (){
+      $categorys.classList.toggle("active");
+    })
+  })
+}
 
-  json.map(function(menu){
-    structureMenu += `
-    <div class="header__menu-mobile-wrapper">
-      <div class="header__menu-mobile-wrapper-department">
-        <a 
-          href=${menu.url}
-          class="header__menu-mobile-departament header__menu-mobile-department"
-        >
-         ${menu.name}
-       </a>
-        <span class="header__menu-mobile-icon-arrow icon-menu-mobile-arrow">
-          <img src="assets/arrow down white.png" class="header__menu-mobile-img-arrow" alt="imagem de uma seta para baixo" title="duas barras verticais, nas extremidades superiores estão afastadas e nas inferiores juntas, aassim formando um simbolo de 'v' na cor branca">                    
-        </span>
+function constructMenuMobile(json) {
+  let structureMenu = "";
+  const $containerMenu = document.querySelector(
+    ".header__menu-mobile-options"
+  );
+
+  json.map(function (menu) {
+    structureMenu += 
+    `
+    <div class="header__menu-mobile-wrapper ${menu.children ? "header__menu-mobile-with-child" : 
+    ""}
+    ">
+      <a 
+        href=${menu.url}
+        class="header__menu-mobile-department">
+          ${menu.name}
+      </a>
+      <span class="header__menu-mobile-icon-arrow icon-menu-mobile-arrow">
+        <img src="assets/arrow down white.png" class="header__menu-mobile-img-arrow" alt="imagem de uma seta para baixo" title="duas barras verticais, nas extremidades superiores estão afastadas e nas inferiores juntas, aassim formando um simbolo de 'v' na cor branca">                    
+      </span>
+    </div>
+    ${menu.children ? `
+    <div class="header__menu-mobile-itens ">
+    ${menu.children.map(function (child){
+      return `
+      <div class="header__menu-wrapper">
+        <a href="index.html" class="header__menu-category">
+          citrino
+        </a>
       </div>
-     </div>
+      `
+    })
+    .join("")}
+      
+    </div>
+    ` : ``}    
     `
   })
-  $containerMenu.innerHTML = structureMenu
+  .join("");
+  $containerMenu.innerHTML = structureMenu;
+  handleMenuMobileCategory();
 }
 
 informativesTop();
 requestMenu();
+constructMenuMobile();
 
 function handleToggleMenuMobile() {
   const $menuMobile = document.querySelector(".header__menu-hamburguer");
@@ -139,19 +173,7 @@ function handleToggleMenuMobile() {
 
 handleToggleMenuMobile();
 
-function handleMenuMobileCategory() {
-  const $iconShowDepartament = document.querySelector(
-    ".icon-menu-mobile-arrow"
-  );
 
-  console.log($iconShowDepartament)
-  const $menuCategory = document.querySelector(".header__menu-mobile-itens");
-  $iconShowDepartament.addEventListener("click", function () {
-    $menuCategory.classList.toggle("active");
-  });
-}
-
-handleMenuMobileCategory();
 
 function rotateArrow() {
   const $iconShowDepartament = document.querySelector(

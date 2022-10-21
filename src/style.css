@@ -280,7 +280,7 @@ table {
   left: -200%;
   height: 100vh;
   width: 100%;
-  background-color: blue;
+  background-color: #FFFFFF;
   transition: all 0.9s;
   display: flex;
   justify-content: space-between;
